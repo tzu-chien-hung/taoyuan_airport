@@ -1,0 +1,109 @@
+.ham_all {
+  position: relative;
+  right: 0px;
+}
+
+.ham {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
+}
+
+.ham_origin {
+  position: absolute;
+  top: 50%;
+  right: 62%;
+}
+
+.ham_bar {
+  height: 5px;
+  width: 40px;
+  position: absolute;
+  background: #02b04f;
+  margin: -1px 0 0 -13px;
+  transition: all .5s;
+  border-radius: 30px;
+
+}
+
+.ham_bar_top {
+  transform: translateY(-14px);
+}
+
+.ham_bar_bottom {
+  transform: translateY(14px);
+}
+
+#nav_toggle {
+  display: none;
+}
+
+#nav_toggle:checked~.ham .ham_bar_middle {
+  opacity: 0;
+}
+
+#nav_toggle:checked~.ham .ham_bar_top {
+  transform: rotate(-45deg);
+}
+
+#nav_toggle:checked~.ham .ham_bar_bottom {
+  transform: rotate(45deg);
+}
+
+/* Nav Style */
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  /*   padding: 30px; */
+  background: #fff;
+  /* 用 translate 把選單藏到畫面右邊去 */
+  transform: translateX(100%);
+  transition: transform .5s;
+  width: 320px;
+  z-index: 1;
+}
+
+#nav_toggle:checked~.menu {
+  transform: none;
+}
+
+.menu_list {
+  margin-top: 40px;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
+  font-size: 26px;
+}
+
+.menu_item {
+  padding: 10px;
+}
+
+.menu_link {
+  text-decoration: none;
+  color: #02b04f;
+}
+
+.menu_bg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(105, 102, 102, 0.437);
+}
+.peach_home{
+  position: relative;
+  height: 100vh;
+  width: 100px;
+  bottom: 0;
+}
+.peach{
+  position: absolute;
+  bottom: 0;
+}

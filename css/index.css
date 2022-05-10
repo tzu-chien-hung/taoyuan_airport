@@ -1,0 +1,162 @@
+@import "./header.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.main {
+  background-image: url(../img/pic_bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+  /* border: 1px solid red; */
+}
+
+@-webkit-keyframes bounce-up {
+  25% {
+    -webkit-transform: translateY(10px);
+  }
+
+  50%,
+  100% {
+    -webkit-transform: translateY(0);
+  }
+
+  75% {
+    -webkit-transform: translateY(-10px);
+  }
+}
+
+@keyframes bounce-up {
+  25% {
+    transform: translateY(10px);
+  }
+
+  50%,
+  100% {
+    transform: translateY(0);
+  }
+
+  75% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-up {
+  width: 100px;
+  height: 100px;
+  margin: 280px auto;
+  -webkit-animation: bounce-up 1.4s linear infinite;
+  animation: bounce-up 1.4s linear infinite;
+}
+
+.sec1_toggle_origin {
+  width: 40px;
+  height: 40px;
+}
+
+.sec1_toggle_origin img {
+  width: 100%;
+  fill: red;
+}
+
+.sec1_content {
+  position: relative;
+  right: 0px;
+}
+
+.sec1_toggle {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  /* border: 1px solid red; */
+  left: 44%;
+  top: 40%;
+  /* z-index: 1; */
+}
+
+.sec1_toggle_origin {
+  /* position: absolute; */
+  /* top: 50%;
+    right: 62%; */
+  width: 30px;
+  height: 30px;
+}
+/* .ham_bar {
+    height: 5px;
+    width: 40px;
+    position: absolute;
+    background: #02b04f;
+    margin: -1px 0 0 -13px;
+    transition: all .5s;
+    border-radius:30px;
+  }
+  
+  .ham_bar_top {
+    transform: translateY(-14px);
+  }
+  
+  .ham_bar_bottom {
+    transform: translateY(14px);
+  } */
+
+#sec1_toggle {
+  display: none;
+}
+
+/* Nav Style */
+
+.sec1_menu {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform .5s;
+  width: 320px;
+  color: rgb(53, 53, 53);
+}
+
+#sec1_toggle:checked~.sec1_menu {
+  transform: none;
+}
+.menu_bg2{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(105, 102, 102, 0.437);
+}
+.sec1_toggle_close {
+  color: rgb(53, 53, 53);
+  font-size: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.sec1_menu_content_all {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sec1_menu_content {}
+
+.sec1_menu_txt {
+  font-size: 14px;
+}
+
+.sec1_menu_pic {
+  margin: 10px auto;
+}
+
+.sec1_menu_pic img {
+  width: 100%;
+}
