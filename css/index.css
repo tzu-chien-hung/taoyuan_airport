@@ -196,10 +196,10 @@ body {
   transition: .3s; */
 }
 .mwt_border {
-  width: 200px;
-  height: 90px;
+  width: 160px;
+  height: 80px;
   text-align: center;
-  font-size: 22px;
+  font-size: 18px;
   color: #333;
   background: #fff;
   position: relative;
