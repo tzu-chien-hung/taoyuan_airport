@@ -7,23 +7,189 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>綠色機場遊戲</title>
     <style>
-        
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .game_box {
+            /* width: 600px;
+            height: 337.5px;
+            border: 3px solid #02b04f; */
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+        }
+
+        .game_img1 {
+            /* width: 600px;
+            height: 337.5px; */
+            flex-shrink: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(./img/draft2_2D.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+
+        .game_img2 {
+            /* width: 600px;
+            height: 337.5px; */
+            position: absolute;
+            opacity: 0;
+            /* left: 11px; */
+            flex-shrink: 0;
+            width: 100%;
+            height: 100vh;
+            background-image: url(./img/draft1_3D.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .game_img1 img {
+            width: 600px;
+        }
+
+        .game_img2 img {
+            width: 100%;
+        }
+
+        @keyframes fadein {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animation-fadein {
+            animation: fadein 2s;
+            opacity: 1;
+        }
+        .second_btn {
+            width: 185px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            color: #02b04f;
+            text-decoration: none;
+        }
+
+        .second_btn2 {
+            width: 185px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 50px;
+            z-index: 1;
+            color: #02b04f;
+            text-decoration: none;
+        }
+
+        .second_btn_home {
+            font-size: 24px;
+            width: 100px;
+            padding-left: 20px;
+        }
+        @-webkit-keyframes bounce-left {
+            25% {
+                -webkit-transform: translateX(10px);
+            }
+
+            50%,
+            100% {
+                -webkit-transform: translateX(0);
+            }
+
+            75% {
+                -webkit-transform: translateX(-10px);
+            }
+        }
+
+        @keyframes bounce-left {
+            25% {
+                transform: translateX(10px);
+            }
+
+            50%,
+            100% {
+                transform: translateX(0);
+            }
+
+            75% {
+                transform: translateX(-10px);
+            }
+        }
+
+        .animate-bounce-left {
+            width: 30px;
+            height: 30px;
+            -webkit-animation: bounce-left 1.4s linear infinite;
+            animation: bounce-left 1.4s linear infinite;
+        }
     </style>
 </head>
 
 <body>
     <main>
         <div>
-            <div>
-                <div>
-                    <img src="./img/draft2_2D.jpg" alt="">
+            <div class="game_box">
+                <div class="game_img1" id="game_btn1">
+                    <div style="width:250px; height: 250px; border-radius: 50%; background-color: rgba(240, 248, 255, 0.685);" >
+                        <div style="width:250px; height: 250px; font-size:50px; font-weight: 700; color: rgb(82, 82, 82); display: flex; justify-content: center; align-items: center;">
+                            Click
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <img src="./img/draft1_3D.jpg" alt="">
+                <div class="game_img2" id="game_btn2">
+                    <a href="./index.html" class="second_btn">
+                        <svg class="animate-bounce-left" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+                        </svg>
+                        <span class="second_btn_home">回首頁</span>
+                    </a>
+                    <a href="./html.html" class="second_btn2">
+                        <span class="second_btn_home" style="width: 140px;">黑區塊轉場</span>
+                        <svg class="animate-bounce-left" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                            fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+                        </svg>
+                    </a>
                 </div>
             </div>
         </div>
     </main>
+    <script>
+        const game_btn1 = document.getElementById("game_btn1");
+        console.log(game_btn1);
+        const game_btn2 = document.getElementById("game_btn2");
+        console.log(game_btn2);
+        game_btn2.addEventListener("click", function(){
+            game_btn2.classList.add('animation-fadein');
+            console.log('game_btn2');
+            game_btn1.style.display="none"
+        })
+
+    </script>
 </body>
 
 </html>
