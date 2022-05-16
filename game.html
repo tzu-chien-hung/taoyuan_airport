@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>綠色機場遊戲</title>
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
         }
+
         .game_box {
             /* width: 600px;
             height: 337.5px;
@@ -31,8 +32,8 @@
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-            display: flex; 
-            justify-content: center; 
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
@@ -63,20 +64,38 @@
             0% {
                 opacity: 0;
             }
-
             50% {
-                opacity: 0.5;
+                opacity: 0;
             }
-
             100% {
                 opacity: 1;
             }
         }
 
         .animation-fadein {
-            animation: fadein 2s;
+            animation: fadein 1.5s;
             opacity: 1;
+            animation-timing-function: linear;
         }
+
+        @keyframes fadeout {
+            0% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .animation-fadeout {
+            animation: fadeout 1.5s;
+            opacity: 0;
+            animation-timing-function: linear;
+        }
+
         .second_btn {
             width: 185px;
             height: 60px;
@@ -107,6 +126,7 @@
             width: 100px;
             padding-left: 20px;
         }
+
         @-webkit-keyframes bounce-left {
             25% {
                 -webkit-transform: translateX(10px);
@@ -151,8 +171,10 @@
         <div>
             <div class="game_box">
                 <div class="game_img1" id="game_btn1">
-                    <div style="width:250px; height: 250px; border-radius: 50%; background-color: rgba(240, 248, 255, 0.685);" >
-                        <div style="width:250px; height: 250px; font-size:50px; font-weight: 700; color: rgb(82, 82, 82); display: flex; justify-content: center; align-items: center;">
+                    <div
+                        style="width:250px; height: 250px; border-radius: 50%; background-color: rgba(240, 248, 255, 0.685);">
+                        <div
+                            style="width:250px; height: 250px; font-size:50px; font-weight: 700; color: rgb(82, 82, 82); display: flex; justify-content: center; align-items: center;">
                             Click
                         </div>
                     </div>
@@ -183,10 +205,15 @@
         console.log(game_btn1);
         const game_btn2 = document.getElementById("game_btn2");
         console.log(game_btn2);
-        game_btn2.addEventListener("click", function(){
-            game_btn2.classList.add('animation-fadein');
+        game_btn2.addEventListener("click", function () {
+            game_btn1.classList.add('animation-fadeout');
+            // game_btn1.style.display = "none";
+            setTimeout(function () {
+                game_btn2.classList.add('animation-fadein');
             console.log('game_btn2');
-            game_btn1.style.display="none"
+            }, 500)
+
+
         })
 
     </script>
