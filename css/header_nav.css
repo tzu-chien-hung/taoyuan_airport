@@ -121,7 +121,9 @@
     width: 320px;
     z-index: 1;
   }
-  
+  .menu_logo{
+    display: none;
+  }
   #nav_toggle:checked~.menu {
     transform: none;
   }
@@ -132,6 +134,8 @@
     list-style: none;
     text-align: center;
     font-size: 26px;
+    display: block;
+    width: 320px;
   }
   
   .menu_item {
