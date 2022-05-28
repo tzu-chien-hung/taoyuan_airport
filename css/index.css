@@ -8,10 +8,10 @@ body {
   background-image: url(../img/draft2_2D.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  /* overflow: hidden; */
-  background-position: center;
-  width: 100vw;
-  height: 100vh;
+  overflow: hidden;
+  background-position:center center;
+  width: 100%;
+  height: calc(100vh - 84px);
   /* border: 1px solid red; */
 }
 
@@ -214,7 +214,7 @@ body {
 }
 
 .peach_home {
-  position: relative;
+  position: absolute;
   height: 100vh;
   width: 100px;
   bottom: 0;
