@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>jQuery UI 拖动（Draggable） - 默认功能</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <script src="./trygame.js"></script>
+    <script src="./index.js"></script>
+    <style>
+        #draggable {
+            /* width: 100vw;
+            height: 2000px; */
+            padding: 0.5em;
+        }
+        * {
+            margin: 0px;
+            width: 100%;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("#draggable").draggable();
+        });
+        // window.addEventListener('resize', function () {
+        //     app.renderer.resize(window.innerWidth, window.innerHeight);
+        // });
+    </script>
+</head>
+
+<body>
+    <div id="draggable" class="ui-widget-content">
+        <div class="content">
+            <!-- <button id="play">全螢幕並將螢幕設為橫向</button>
+            <button id="exit">離開全螢幕</button> -->
+            <div id="animation_container" style="background-color:rgba(0, 0, 0, 1.00); width:100%">
+                <canvas id="canvas" width="1024" height="768"
+                    style="transform-origin: 0px 0px; position: absolute; background-color:rgba(0, 0, 0, 1.00);"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
