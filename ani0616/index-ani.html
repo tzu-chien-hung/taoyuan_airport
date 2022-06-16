@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
+    
+    <script src="Untitled-1.js?1655284599574"></script>
+    <script src="./index.js"></script>
+    <script>
+        window.addEventListener('resize', function () {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            const canvasW = canvas.clientWidth;
+            const canvasH = canvas.clientHeight;
+            console.log(w, canvasW, h, canvasH);
+            $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
+        });
+
+        $(function () {
+            // const canvasWidth = document.getElementById('animation_container');
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            const canvasW = canvas.clientWidth;
+            const canvasH = canvas.clientHeight;
+            console.log(w, canvasW, h, canvasH);
+            $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
+            const draggableArea = document.getElementById('body');
+            console.log(draggableArea)
+        });
+        window.addEventListener('wheel', (e) => {
+            console.log('1')
+            e.preventDefault()
+        }, { passive: false })
+    </script>
+    <script src="http://www.mamicode.com/jquery.ui.touch-punch.min.js"></script>
+    <script>$('#draggable').draggable();</script>
+    <style>
+        * {
+            scroll-snap-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #canvas {
+            margin: 0px;
+            width: 1920px;
+        }
+
+        #draggableArea {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #draggableArea {
+            /* width: 100vw; */
+            /* height: 100vh; */
+            /* border: 1px solid; */
+        }
+
+        #draggable {
+            border: 0px;
+            /* width: 100%; */
+        }
+
+        .form-popup {
+            width: 400px;
+            height: 350px;
+            background-color: pink;
+            border-radius: 8px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+
+        .form-text {
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .close {
+            font-size: 30px;
+            font-family: 'Trebuchet MS';
+            display: flex;
+            justify-content: end;
+            padding: 5px 20px;
+            color: darkslateblue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+
+<body onload="init();" style="margin:0px;" id="body">
+    <div id="draggableArea">
+        <div id="draggable" class="ui-widget-content">
+            <div class="content">
+                <div id="animation_container"
+                    style="background-color:rgba(255, 255, 255, 1.00); width:1024px; height:768px">
+                    <canvas id="canvas" width="1024" height="768"
+                        style="position: absolute; display: block; background-color:rgba(255, 255, 255, 1.00);"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-popup" id="myForm">
+        <div class="close" id="close">X</div>
+        <div class="form-text">
+            太陽（又稱日），是太陽系中心的恆星，它幾乎是熱電漿與磁場交織著的一個理想球體。它的直徑大約是1,392,000（1.392×106）公里，相當於地球直徑的109.3倍；質量大約是2×1030千克（地球的333,000倍），約佔太陽系總質量的99.86%。從化學組成來看，太陽質量的大約四分之三是氫（~73%），剩下的幾乎都是氦（~25%），包括氧、碳、氖、鐵和其他的重元素質量少於2%。
+        </div>
+    </div>
+</body>
+
+</html>
