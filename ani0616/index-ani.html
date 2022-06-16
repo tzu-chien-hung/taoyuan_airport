@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ani1</title>
     <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
-    <link rel="stylesheet" href="https://jqueryui.com/resources/demos/style.css">
+    <link rel="stylesheet" href="http://jqueryui.com/resources/demos/style.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
@@ -45,7 +45,7 @@
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
             console.log(w, canvasW, h, canvasH);
-            $("#draggable").draggable({ containment: [w - canvasW,-(abs(h-canvasH)), 0, 0] });
+            $("#draggable").draggable({ containment: [w - canvasW,h - canvasH, 0, 0] });
             const draggableArea = document.getElementById('body');
             console.log(draggableArea)
         });
@@ -74,11 +74,6 @@
             overflow: hidden;
         }
 
-        #draggableArea {
-            /* width: 100vw; */
-            /* height: 100vh; */
-            /* border: 1px solid; */
-        }
 
         #draggable {
             border: 0px;
