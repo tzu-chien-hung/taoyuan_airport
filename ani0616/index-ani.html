@@ -13,16 +13,17 @@
     <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
     <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <script src="http://code.jquery.com/ui/1.8.21/jquery-ui.min.js"></script>
-    
     <script src="Untitled-1.js?1655284599574"></script>
     <script src="./index.js"></script>
+    <script src="http://www.mamicode.com/jquery.ui.touch-punch.min.js"></script>
+
     <script>
         window.addEventListener('resize', function () {
             const w = window.innerWidth;
             const h = window.innerHeight;
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
-            console.log(w, canvasW, h, canvasH);
+            // console.log(w, canvasW, h, canvasH);
             $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
         });
 
@@ -32,18 +33,16 @@
             const h = window.innerHeight;
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
-            console.log(w, canvasW, h, canvasH);
+            // console.log(w, canvasW, h, canvasH);
             $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
             const draggableArea = document.getElementById('body');
-            console.log(draggableArea)
+            // console.log(draggableArea)
         });
         window.addEventListener('wheel', (e) => {
-            console.log('1')
+            // console.log('1')
             e.preventDefault()
         }, { passive: false })
     </script>
-    <script src="http://www.mamicode.com/jquery.ui.touch-punch.min.js"></script>
-    <script>$('#draggable').draggable();</script>
     <style>
         * {
             scroll-snap-type: none;
@@ -98,6 +97,35 @@
             padding: 5px 20px;
             color: darkslateblue;
             cursor: pointer;
+        }
+
+        @media (max-width: 575.98px) {
+            .form-popup {
+                width: 200px;
+                height: 350px;
+                background-color: pink;
+                border-radius: 8px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                display: none;
+            }
+
+            .form-text {
+                font-size: 18px;
+                padding: 10px;
+            }
+
+            .close {
+                font-size: 30px;
+                font-family: 'Trebuchet MS';
+                display: flex;
+                justify-content: end;
+                padding: 5px 20px;
+                color: darkslateblue;
+                cursor: pointer;
+            }
         }
     </style>
 </head>
