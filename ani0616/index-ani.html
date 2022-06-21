@@ -28,14 +28,14 @@
         //     });
         // });
 
-        // window.addEventListener('resize', function () {
-        //     const w = window.innerWidth;
-        //     const h = window.innerHeight;
-        //     const canvasW = canvas.clientWidth;
-        //     const canvasH = canvas.clientHeight;
-        //     console.log(w, canvasW, h, canvasH);
-        //     $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
-        // });
+        window.addEventListener('resize', function () {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            const canvasW = canvas.clientWidth;
+            const canvasH = canvas.clientHeight;
+            console.log(w, canvasW, h, canvasH);
+            $("#draggable").draggable({ containment: [w - canvasW, h - canvasH, 0, 0] });
+        });
 
         $(function () {
             // const canvasWidth = document.getElementById('animation_container');
