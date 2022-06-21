@@ -36,7 +36,9 @@ function handleComplete(evt,comp) {
 	}
 	exportRoot = new lib.trygame();
 	stage = new lib.Stage(canvas);
-	stage.enableMouseOver();	
+	stage.enableMouseOver();
+	exportRoot.on("pressmove", drag);
+
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
 		stage.addChild(exportRoot);
@@ -47,4 +49,13 @@ function handleComplete(evt,comp) {
 	// AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
+}
+function drag(evt) {
+	// target will be the container that the event listener was added to
+		evt.target.x = evt.stageX;
+		evt.target.y = evt.stageY;
+
+	// make sure to redraw the stage to show the change
+	stage.update();
+	// console.log(evt)
 }

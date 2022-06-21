@@ -14,6 +14,12 @@ function init() {
 	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
 	var lib=comp.getLibrary();
 	loader.loadManifest(lib.properties.manifest);
+
+	// var canvas = document.getElementsByTagName('canvas')[0];
+	// canvas.width = window.innerWidth;
+	// canvas.height = window.innerHeight;
+	stage = new createjs.Stage("canvas");
+	stage.update();
 }
 function handleFileLoad(evt, comp) {
 	var images=comp.getImages();	
@@ -31,28 +37,10 @@ function handleComplete(evt,comp) {
 	exportRoot = new lib.Untitled1();
 	stage = new lib.Stage(canvas);
 	stage.enableMouseOver();	
+	exportRoot.on("pressmove", drag);
     stage.addChild(exportRoot);
-
-	console.log('exportRoot');
-
-	// function drag(evt) {
-	// 	// target will be the container that the event listener was added to
-	// 	if (evt.target.name == "canvas") {
-	// 		evt.target.x = evt.stageX - SIZE;
-	// 		evt.target.y = evt.stageY - SIZE;
-	// 	}
-	// 	else {
-	// 		evt.target.x = evt.stageX;
-	// 		evt.target.y = evt.stageY;
-	// 	}
-
-	// 	// make sure to redraw the stage to show the change
-	// 	stage.update();
-	// }
-
-
-
-
+	
+	console.log(stage);
 
     var location = exportRoot.location;
     location.addEventListener("click",()=>{
@@ -73,4 +61,17 @@ function handleComplete(evt,comp) {
 	// AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
+	
+}
+var stage;
+var SIZE = 50;
+
+function drag(evt) {
+	// target will be the container that the event listener was added to
+		evt.target.x = evt.stageX;
+		evt.target.y = evt.stageY;
+
+	// make sure to redraw the stage to show the change
+	stage.update();
+	// console.log(evt)
 }
