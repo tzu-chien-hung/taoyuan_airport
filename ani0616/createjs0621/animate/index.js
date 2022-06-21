@@ -35,11 +35,11 @@ function handleComplete(evt,comp) {
 		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
 	}
 	exportRoot = new lib.trygame();
+	exportRoot.on("pressmove", drag);
 	stage = new lib.Stage(canvas);
 	stage.enableMouseOver();	
 	//Registers the "tick" event listener.
 	fnStartAnimation = function() {
-		exportRoot.on("pressmove", drag);
 		stage.addChild(exportRoot);
 		createjs.Ticker.framerate = lib.properties.fps;
 		createjs.Ticker.addEventListener("tick", stage);
@@ -48,13 +48,13 @@ function handleComplete(evt,comp) {
 	// AdobeAn.makeResponsive(false,'both',false,1,[canvas,anim_container,dom_overlay_container]);	
 	AdobeAn.compositionLoaded(lib.properties.id);
 	fnStartAnimation();
-}
-function drag(evt) {
-	// target will be the container that the event listener was added to
-		evt.target.x = evt.stageX;
-		evt.target.y = evt.stageY;
-
-	// make sure to redraw the stage to show the change
-	stage.update();
-	// console.log(evt)
+	function drag(evt) {
+		// target will be the container that the event listener was added to
+			evt.target.x = evt.stageX;
+			evt.target.y = evt.stageY;
+	
+		// make sure to redraw the stage to show the change
+		stage.update();
+		// console.log(evt)
+	}
 }
