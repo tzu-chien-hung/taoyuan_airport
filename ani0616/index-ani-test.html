@@ -29,8 +29,10 @@
         // });
 
         window.addEventListener('resize', function () {
+            const canvas = document.getElementById('canvas')
+            const draggableArea = document.getElementById('draggableArea')
             const w = window.innerWidth;
-            const h = window.innerHeight;
+            const h = draggableArea.clientHeight;
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
             console.log(canvasW,canvasH, w, h,-(Math.abs(h - canvasH)));
@@ -41,14 +43,15 @@
         $(function () {
             // const canvasWidth = document.getElementById('animation_container');
             const canvas = document.getElementById('canvas')
+            const draggableArea = document.getElementById('draggableArea')
             const w = window.innerWidth;
-            const h = window.innerHeight;
+            const h = draggableArea.clientHeight;
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
             console.log(canvasW,canvasH, w, h,-(Math.abs(h - canvasH)));
             $("#draggable").draggable({ containment: [w - canvasW,-(Math.abs(h - canvasH)), 0, 0] });
-            const draggableArea = document.getElementById('body');
-            console.log(draggableArea)
+            const draggableAreaB = document.getElementById('body');
+            console.log(draggableAreaB)
         });
         window.addEventListener('wheel', (e) => {
             console.log('1')
