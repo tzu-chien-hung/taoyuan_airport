@@ -473,8 +473,8 @@ p.nominalBounds = new cjs.Rectangle(0,0,2068,1368);
 
 
 
-(lib._25530 = function() {
-	this.initialize(img._25530);
+(lib.TryTrySee = function() {
+	this.initialize(img.TryTrySee);
 }).prototype = p = new cjs.Bitmap();
 p.nominalBounds = new cjs.Rectangle(0,0,4676,4676);
 
@@ -2224,7 +2224,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib._25530();
+	this.instance = new lib.TryTrySee();
 	this.instance.setTransform(-51.95,-51.95,0.0222,0.0222);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -2247,7 +2247,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib._25530();
+	this.instance = new lib.TryTrySee();
 	this.instance.setTransform(-51.95,-51.95,0.0222,0.0222);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -2270,7 +2270,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib._25530();
+	this.instance = new lib.TryTrySee();
 	this.instance.setTransform(-51.95,-51.95,0.0222,0.0222);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -2293,7 +2293,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib._25530();
+	this.instance = new lib.TryTrySee();
 	this.instance.setTransform(-51.95,-51.95,0.0222,0.0222);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -2316,7 +2316,7 @@ if (reversed == null) { reversed = false; }
 	cjs.MovieClip.apply(this,[props]);
 
 	// Layer_1
-	this.instance = new lib._25530();
+	this.instance = new lib.TryTrySee();
 	this.instance.setTransform(-51.95,-51.95,0.0222,0.0222);
 
 	this.timeline.addTween(cjs.Tween.get(this.instance).wait(1));
@@ -4943,7 +4943,7 @@ lib.properties = {
 	manifest: [
 		{src:"images/CachedBmp_22.png?1655284599555", id:"CachedBmp_22"},
 		{src:"images/CachedBmp_21.png?1655284599555", id:"CachedBmp_21"},
-		{src:"images/_25530.png?1655284599555", id:"_25530"},
+		{src:"images/TryTrySee.png?1655284599555", id:"TryTrySee"},
 		{src:"images/Untitled_1_atlas_1.png?1655284599271", id:"Untitled_1_atlas_1"}
 	],
 	preloads: []
