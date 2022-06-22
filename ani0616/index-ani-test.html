@@ -33,7 +33,7 @@
             const h = window.innerHeight;
             const canvasW = canvas.clientWidth;
             const canvasH = canvas.clientHeight;
-            console.log(w, canvasW, h, canvasH);
+            console.log(w - canvasW,h - canvasH, 0, 0);
             $("#draggable").draggable({ containment: [w - canvasW,h - canvasH, 0, 0] });
         });
 
